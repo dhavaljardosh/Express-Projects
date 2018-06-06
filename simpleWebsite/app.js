@@ -12,7 +12,13 @@ var app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/',(req,res) => {
+  console.log(path);
   res.sendFile(__dirname + '/views/index.html');
+})
+
+app.get('/logs.html',(req,res) => {
+  console.log(path);
+  res.sendFile(__dirname + '/views/logs.html');
 })
 
 app.listen(2000, () => console.log("Loda Loda"));

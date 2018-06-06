@@ -1,0 +1,15 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.nav-wrapper{
+  padding:0 20px;
+  background-color: #b95906;
+}
+#nav-mobile.left{
+  margin-left: 180px;
+}

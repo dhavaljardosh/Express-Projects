@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/materialize.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+  nav.nav-wrapper
+    a.brand-logo(href='#') Node Auth
+    ul#nav-mobile.left.hide-on-med-and-down
+      li(class=(title=="Members"?"active":""))
+        a(href='/users/members') Home
+      li(class=(title=="Register"?"active":""))
+        a(href='/users/register') Register
+      li(class=(title=="Login"?"active":""))
+        a(href='/users/login') Login      
+    ul#nav-mobile.right.hide-on-med-and-down
+      li
+        a(href='/users/logout') Logout
+  
+  div.container
+    block content
+    
+    
