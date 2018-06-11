@@ -19,6 +19,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -28,6 +30,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 //Handle Sessions
 
@@ -44,7 +48,7 @@ app.use(passport.session());
 //Validator
 var api = express.Router();
 var expressValidator = require('express-validator');
-api.use(expressValidator())
+api.use(expressValidator());
 app.use(express.json());
 app.post('/user', (req, res) => {
   User.create({
@@ -53,6 +57,10 @@ app.post('/user', (req, res) => {
   }).then(user => res.json(user));
 });
 
+//Handle File uploads
+app.use(multer({dest:'./uploads'}).any());
+
+
 //Flash messages
 
 app.use(require('connect-flash')());
@@ -60,8 +68,6 @@ app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   next();
 });
-
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

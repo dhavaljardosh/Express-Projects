@@ -7,22 +7,22 @@
   },
   "dependencies": {
     "body-parser": "*",
+    "connect-flash": "*",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "^5.2.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "serve-favicon": "~2.3.0",
     "mongodb": "*",
     "mongoose": "*",
-    "connect-flash": "*",
-    "express-messages": "*",
-    "express-validator": "*",
-    "passport": "*",
-    "passport-local": "*",
-    "passport-http": "*",
+    "morgan": "~1.9.0",
     "multer": "",
-    "express-session": "*"
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "serve-favicon": "~2.3.0"
   }
 }
