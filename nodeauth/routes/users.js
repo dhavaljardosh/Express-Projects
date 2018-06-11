@@ -81,6 +81,8 @@ console.log("Completed Loda");
       console.log(user);
     });
 
+    req.flash('success',"You're Registered and can Login");
+
     res.location('/');
     res.redirect('/');
   }
