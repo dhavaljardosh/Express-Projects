@@ -69,6 +69,12 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get('*',function(req,res,next){
+  res.locals.user = req.users || null;
+  console.log(res.locals.user);
+  next();
+})
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
